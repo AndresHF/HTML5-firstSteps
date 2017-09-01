@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <script src="canvasText.js"></script>
         <script src="PracticaPelota.js"></script>
+        <script src="theMatrix.js"></script>
         <style>
         
             div{
@@ -17,7 +18,7 @@
         </style>
     </head>
     
-    <body onload="loadCanvas(); loadCanvas2();">
+    <body onload="loadCanvas(); loadCanvas2(); loadCanvasMatrix()">
     
         <div id="contenedorCanvas">
             Escribe algo&nbsp;<input type="text" id="texto" value="JaGUaRs">
@@ -31,7 +32,10 @@
             <input type="range" id="xspeed" class="range" min="-50" max="50" step="1">
             <input type="range" id="yspeed" class="range" min="0" max="200" step="1">
         </div>
-    
+        <div>
+            <canvas id="canvasMatrix"></canvas>
+            <input type="submit" id="comienzaMatrix" class="botonCanvas" value="Start">
+        </div>
     
     </body>
 
