@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="canvasText.js"></script>
+        <script src="PracticaPelota.js"></script>
+        <style>
+        
+            div{
+                width: 850px;
+                margin: auto;
+                position: relative;
+                
+            }
+        
+        </style>
+    </head>
+    
+    <body onload="loadCanvas(); loadCanvas2();">
+    
+        <div id="contenedorCanvas">
+            Escribe algo&nbsp;<input type="text" id="texto" value="JaGUaRs">
+            <canvas id="efectoTexto" class="myCanvas"></canvas>
+        </div>
+        <div>
+            <canvas id="canvasPelota"></canvas>
+            <input type="submit" class ="botonBalon" id="comenzar" value="Start">
+            <input type="submit" class ="botonBalon" id="kick" value="Kick">
+            <input type="submit" class ="botonBalon" id="reset" value="Reset">
+            <input type="range" id="xspeed" class="range" min="-50" max="50" step="1">
+            <input type="range" id="yspeed" class="range" min="0" max="200" step="1">
+        </div>
+    
+    
+    </body>
+
+
+
+</html>
