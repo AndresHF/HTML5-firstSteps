@@ -6,6 +6,7 @@
         <script src="canvasText.js"></script>
         <script src="PracticaPelota.js"></script>
         <script src="theMatrix.js"></script>
+        <script src="steeringBehaviors.js"></script>
         <style>
         
             div{
@@ -14,11 +15,14 @@
                 position: relative;
                 
             }
+            body{
+                background-color: rgb(51,51,51);
+            }
         
         </style>
     </head>
     
-    <body onload="loadCanvas(); loadCanvas2(); loadCanvasMatrix()">
+    <body onload="loadCanvas(); loadCanvas2(); loadCanvasMatrix(); loadCanvasSteering()">
     
         <div id="contenedorCanvas">
             Escribe algo&nbsp;<input type="text" id="texto" value="JaGUaRs">
@@ -36,6 +40,17 @@
             <canvas id="canvasMatrix"></canvas>
             <input type="submit" id="comienzaMatrix" class="botonCanvas" value="Start">
         </div>
+        
+        <div id ="contenedorSteering">
+            <canvas id="canvasSteering"></canvas>
+            <input type="submit" class="botonCanvas" id="comienzaSteering" value="Start">
+            <input type="submit" class="botonCanvas" id="steeringSplit" value="Split">
+            <input type="submit" class="botonCanvas" id="steeringReset" value="Reset">
+            <input type="submit" class="botonCanvas" id="onmouse" value="Move">
+            <input type="submit" class="botonCanvas" id="repulsion" value="Attraction">
+            <input type="range" style="width:350px" id="steeringMaxSpeed" min="0.2" max="0.9" step="0.01" value="0.5">
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br>
     
     </body>
 
