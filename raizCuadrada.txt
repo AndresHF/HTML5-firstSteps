@@ -1,0 +1,39 @@
+;cargo manualmente en F4 el número sobre el que quiero calcular su raiz
+LDA #0 
+STA $50 ; valor sobre el que voy a empezar a calcular y a la vez veces que tengo que sumarlo (1x1, 2x2, 3x3,.....)
+STA $51 ; referencia al número por si me paso, quedarme con el anterior
+STA $52 ; valor inicial del contador
+STA $53 ; valor inicial del acumulador
+
+CMP $50 ;compara el contador con las veces que tengo que sumar
+JZ $1A ; SALTA A: comprueba si es la raiz
+INA
+STA $52
+LDA $53
+ADD $50
+STA $53
+LDA $52
+JMP $0A
+
+;comprueba si es la raiz
+LDA $53 ;Cargo el valor del acumulador y lo comparo con el número de $F4
+CMP $F4
+JZ $25 ; Si es 0 hemos encontrado la raíz, almacena el valor de $50 en $FF y HLT
+JC $26 ; Si nos hemos pasado, rescata el valor anterior (alojado en $51, que será la raíz), almacena en $FF y HLT
+;si no, almacena el valor de la dir. $50 en la dirección para valor anterior($51),incrementa en 1 el valor de la dirección $50, resetea el contador y el acumulador($52 y $53) y vuelve a empezar
+LDA $50
+STA $51
+INA
+JZ $31 ;Salto de apoyo
+JC $35 ;Salto de apoyo
+STA $50
+LDA #0
+STA $52
+STA $53
+JMP $0A;
+
+LDA $50
+JMP $37;
+LDA $51
+STA $FF
+HLT
