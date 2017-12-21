@@ -1,0 +1,13 @@
+mkdir ejercicio1
+cd ejercicio1
+pwd
+mkdir -p {01..52}/{1..7}
+cd 30/4
+pwd
+touch ../../{01..52}/{1..7}/kk
+mkdir ../../53
+date +"%D %T" > ../../53/kk2
+find / -name "*.java" > ../../02/3/java 2> /dev/null
+ln -s ../../01/7 7
+mkdir kk2
+cp -r ../../{01..09} kk2
